@@ -16,11 +16,26 @@ let testNum = (input) => {
 
 let makeAllCaps = (array) => {
   let checkType = array.map(i => typeof i === 'string' ? i.toUpperCase(): null)
-  console.log(checkType)
-  // return new Promise((resolve, reject) => {
-    
-  // })
+  return new Promise((resolve, reject) => {  
+    checkType.includes(null) ? reject('There was a non string element') : resolve(checkType)
+  })
+}
+
+let sortWords = (capitalizedArr) => {
+  return new Promise((resolve, reject) => {
+    capitalizedArr ? resolve(capitalizedArr.sort()) : reject('status 500') 
+  })
 }
 
 let arr = ['wowow', 'pants', 'bird']
 makeAllCaps(arr)
+  .then(results => sortWords(results))
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error))
+
+
+let sadArr = ['wowow', 5, 'bird']
+makeAllCaps(sadArr)
+  .then(results => sortWords(results))
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error))
