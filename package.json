@@ -1,0 +1,10 @@
+{
+  "name": "promises",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Devon Bull <dbull@live.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node promise.js"
+  }
+}
